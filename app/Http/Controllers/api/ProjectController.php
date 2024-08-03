@@ -10,8 +10,8 @@ class ProjectController extends Controller
 {
     public function index()
     {
-
-        $projects = Project::paginate(2);
+        // aggiungo 2 progetti por page e le tabelle type and technology relazionate a tabella projects
+        $projects = Project::with('type', 'technologies')->paginate(2);
 
         return response()->json([
             'status' => 'success',
