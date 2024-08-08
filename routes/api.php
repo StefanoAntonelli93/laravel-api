@@ -20,5 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // richiamo controller Project
-// in rpute api c'è sempre prefix -> api
-Route::get('projects', [ProjectController::class, 'index']);
+// in route api c'è sempre prefix -> api
+
+
+// Route::get('projects', [ProjectController::class, 'index']);
+
+// apiresource crea una resource senza i metodi edit e create
+Route::apiResource('projects', ProjectController::class);
